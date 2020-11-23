@@ -26,6 +26,7 @@ h3 {
 	border-radius: 10px;
 }
 .work_place {
+	position: relative;
 	padding: 10px;
 	margin: 10px 3%;
 	border: 1px solid #3D405B;
@@ -36,13 +37,33 @@ h3 {
 .anim_box {
 	/*width: 20px;
 	height: 20px;*/
-	display: inline-block;
+	position: absolute;
+	/*display: inline-block;*/
 	padding: 3px 5px;
 	background-color: #81B29A;
 	border-radius: 5px;
 }
+.box1 {left:0;}
+.box2 {left:70px;}
+.box3 {left:140px;}
+.box4 {left:210px;}
+.box5 {left:280px;}
 
+@keyframes moveBlock {
+  from {transform: translateY(0px);}
+  30% {transform: translateY(40px);}
+  50% {transform: translateY(0px);}
+  60% {transform: translateY(10px);}
+  70% {transform: translateY(0px);}
+  80% {transform: translateY(5px);}
+  90% {transform: translateY(0px);}
+  95% {transform: translateY(3px);}
+  to {transform: translateY(0px);}
+}
 
+.animBlock {
+  animation: moveBlock  2s 1 ease-in-out;
+}
 /*---Foter---*/
 footer {
 	margin: 10px 10%;
