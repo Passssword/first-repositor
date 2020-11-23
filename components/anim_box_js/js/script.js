@@ -12,7 +12,7 @@ let massiveBoxes = document.querySelectorAll ('.anim_box');   // Получае�
 function animBox() {
 	massiveBoxes[0].classList.add('animBlock');
 	massiveBoxes[0].addEventListener('animationend', () => {
-		massiveBoxes[0].classList.remove('animBlock')
+		massiveBoxes[0].classList.remove('animBlock');
 		clickCounter++;
 		buttonMagic.innerHTML = "Active Box: " + clickCounter;
 	});
