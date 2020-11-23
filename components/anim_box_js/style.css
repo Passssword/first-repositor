@@ -31,6 +31,7 @@ h3 {
 	margin: 10px 3%;
 	border: 1px solid #3D405B;
 	border-radius: 10px;
+	height: 50px;
 }
 /*---------------------------------------*/
 
@@ -48,6 +49,11 @@ h3 {
 .box3 {left:140px;}
 .box4 {left:210px;}
 .box5 {left:280px;}
+
+.anim_box_button {
+	position: absolute;
+	left:350px;
+}
 
 @keyframes moveBlock {
   from {transform: translateY(0px);}
