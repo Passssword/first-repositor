@@ -13,7 +13,15 @@ function animBox() {
 	massiveBoxes[0].classList.add('animBlock');
 	massiveBoxes[0].addEventListener('animationend', () => {
 		massiveBoxes[0].classList.remove('animBlock');
-		clickCounter++;
 		buttonMagic.innerHTML = "Active Box: " + clickCounter;
 	});
+	clickCounter++;
+	if (clickCounter>=massiveBoxes.leight) {
+		clickCounter=0;
+	}
+}
+
+/*--------*/
+function clickCounterPlus() {
+	return clickCounter++;
 }
