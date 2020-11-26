@@ -10,18 +10,22 @@ let massiveBoxes = document.querySelectorAll ('.anim_box');   // Получае�
 
 
 function animBox() {
-	massiveBoxes[0].classList.add('animBlock');
-	massiveBoxes[0].addEventListener('animationend', () => {
-		massiveBoxes[0].classList.remove('animBlock');
-		buttonMagic.innerHTML = "Active Box: " + clickCounter;
-	});
-	clickCounter++;
-	if (clickCounter>=massiveBoxes.leight) {
-		clickCounter=0;
+	if (clickCounter < massiveBoxes.length) {
+		massiveBoxes[clickCounter].classList.add('animBlock');
+		massiveBoxes[clickCounter].addEventListener('animationend', () => {
+			massiveBoxes[clickCounter].classList.remove('animBlock');
+			buttonMagic.innerHTML = "Active Box: " + clickCounter;
+		});
+		clickCounter++;
+		console.log(clickCounter);
+	}
+	else {
+		clickCounter = 0;
 	}
 }
 
-/*--------*/
-function clickCounterPlus() {
-	return clickCounter++;
-}
+// function f() {
+// 	massiveBoxes.forEach() => {
+
+// 	}
+// }
