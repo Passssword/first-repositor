@@ -11,15 +11,7 @@ let massiveBoxes = document.querySelectorAll ('.anim_box');   // Получае�
 
 function animBox() {
 	if (clickCounter < massiveBoxes.length-1) {
-		massiveBoxes[clickCounter].classList.add('animBlock');
-		massiveBoxes[clickCounter].addEventListener('animationend', () => {
-			massiveBoxes[clickCounter].classList.remove("animBlock");
-			console.log(massiveBoxes[clickCounter].classList);
-			buttonMagic.innerHTML = "Active Box: " + clickCounter;
-		});
-		clickCounter++;
-		console.log(clickCounter);
-	}
+		function (moveBox, plusCounter);
 	else {
 		clickCounter = 0;
 	}
@@ -30,3 +22,17 @@ function animBox() {
 
 // 	}
 // }
+
+function plusCounter() {
+	clickCounter++;
+}
+function moveBox() {
+	massiveBoxes[clickCounter].classList.add('animBlock');
+	massiveBoxes[clickCounter].addEventListener('animationend', () => {
+		massiveBoxes[clickCounter].classList.remove("animBlock");
+		console.log(massiveBoxes[clickCounter].classList);
+		buttonMagic.innerHTML = "Active Box: " + clickCounter;
+	});
+	// clickCounter++;
+	console.log(clickCounter);
+}
