@@ -11,11 +11,12 @@ let massiveBoxes = document.querySelectorAll ('.anim_box');   // Получае�
 
 function animBox() {
 	if (clickCounter < massiveBoxes.length-1) {
-		function (moveBox, plusCounter);
+		moveBox();
+	}
 	else {
 		clickCounter = 0;
 	}
-}
+
 
 // function f() {
 // 	massiveBoxes.forEach() => {
