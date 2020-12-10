@@ -11,11 +11,14 @@ let massiveBoxes = document.querySelectorAll ('.anim_box');   // Получае�
 
 
 buttonMagic.onclick = function animBox() {
-	if (clickCounter < massiveBoxes.length-1) {
+	if (clickCounter < massiveBoxes.length) {
 		moveBox(addEventAnimationend);
+		buttonMagic.disabled = true;
 	}
 	else {
 		clickCounter = 0;
+		moveBox(addEventAnimationend);
+		buttonMagic.disabled = true;
 	}
 }
 
@@ -31,16 +34,18 @@ function removeAnimation () {
 	buttonMagic.innerHTML = "Active Box: " + clickCounter;
 	removeEventAnimationend();
 }
-function addEventAnimationend (param_removeAnimation) {
+function addEventAnimationend () {
 	massiveBoxes[clickCounter].addEventListener('animationend', removeAnimation);
 }
 function removeEventAnimationend() {
 	massiveBoxes[clickCounter].removeEventListener('animationend', removeAnimation)
+	console.log("let clickCounter = "+clickCounter);
+	console.log(massiveBoxes.length);
 	clickCounter++;
-	console.log(clickCounter);
+	buttonMagic.disabled = false;
 }
 
 function moveBox(param_addEventAnimationend) {
 	massiveBoxes[clickCounter].classList.add('animBlock');
-	param_addEventAnimationend(removeAnimation);
+	param_addEventAnimationend();
 }
