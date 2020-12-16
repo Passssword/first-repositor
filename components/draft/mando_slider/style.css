@@ -12,13 +12,17 @@ body {
 /*---------------------------------------*/
 
 .slider_cont {
-	margin: 10px 20%;
-	background: rgba(37, 50, 55, 0.9);;
+	position: relative;
+	margin: 10px auto;
+	background: rgba(37, 50, 55, 0.9);
+	width: 600px;
 	height: 400px;
 	border-radius: 15px;
 }
 
 .card_penson {
+	position: absolute;
+	transform: translate(600px, 20px);
 	width: 200px;
 	height: 300px;
 	border-radius: 15px;
@@ -26,7 +30,54 @@ body {
 .mando {background: url(img/mando_1.jpg) no-repeat; background-size: cover; background-position: center center; }
 .baby {background: url(img/baby_1.jpg) no-repeat; background-size: cover; background-position: center center;}
 .ig11 {background: url(img/ig11_1.jpg) no-repeat; background-size: cover; background-position: center center;}
-/*---------------------------------------*/
+
+.butt_next {
+	position: absolute;
+	left: 180px;
+	bottom: 30px;
+	background: #C2DFE3;
+	padding: 3px;
+	border-radius: 5px;
+	color: #253237;
+	font-size: 18px;
+}
+
+/*---Animation---*/
+
+@keyframes moveTextToLeft {
+  10% {transform: translateX(100px);}
+  100% {transform: translateX(-300px);}
+}
+@keyframes moveImgToLeft {
+  from {transform: translateX(300px);}
+  30% {transform: translateX(290px);}
+  50% {transform: translateX(310px);}
+  to {transform: translateX(-380px);}
+}
+
+@keyframes moveTextToRight {
+  from {transform: translate(600px, 20px);}
+  40% {transform: translate(10px, 20px);}
+  60% {transform: translate(100px, 20px);}
+  to {transform: translate(10px, 20px);}
+}
+@keyframes moveImgToRight {
+  from {transform: translateX(800px);}
+  to {transform: translateX(300px);}
+}
+
+.animTextOut {
+  animation: moveTextToLeft  2s 1 ease-in-out;
+}
+.animImgOut {
+  animation: moveImgToLeft  2s 1 ease-in-out;
+}
+.animTextIn {
+  animation: moveTextToRight  2s 1 ease-in-out;
+}
+.animImgIn {
+  animation: moveImgToRight  2s 1 ease-in-out;
+}
 
 /*---Foter---*/
 footer {

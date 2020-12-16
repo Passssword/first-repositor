@@ -1,16 +1,12 @@
-/* JavaScript */
 
-setTimeout(
-	function () {
-	console.log('messege 1');
-	messegeTwo(messegeThree)
-}, 2000);
+let clickcounter = 0;
+let buttonNext = document.querySelector('.butt_next');
+let massiveCardPerson = document.querySelectorAll('.card_penson');
 
-
-function messegeTwo() {
-	console.log('messege 2');
-	messegeThree()
+buttonNext.onclick = function nextSlide() {
+	massiveCardPerson[clickcounter].classList.add('animTextIn');
+	massiveCardPerson[clickcounter].addEventListener('animationend', stopAnimation);
 }
-function messegeThree() {
-	console.log('messege 3');
+function stopAnimation() {
+	massiveCardPerson[clickcounter].style.transform = 'translate(10px, 20px)';
 }
