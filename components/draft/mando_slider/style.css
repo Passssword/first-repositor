@@ -45,8 +45,8 @@ body {
 /*---Animation---*/
 
 @keyframes moveTextToLeft {
-  10% {transform: translateX(100px);}
-  100% {transform: translateX(-300px);}
+  10% {transform: translate(100px, 20px);}
+  100% {transform: translate(-300px, 20px);}
 }
 @keyframes moveImgToLeft {
   from {transform: translateX(300px);}
@@ -66,18 +66,19 @@ body {
   to {transform: translateX(300px);}
 }
 
-.animTextOut {
-  animation: moveTextToLeft  2s 1 ease-in-out;
+.animImgIn {
+  animation: moveTextToRight  2s 1 ease-in-out;
 }
+.animImgOut {
+  animation: moveTextToLeft  1s 1 ease-in-out;
+}
+/*
 .animImgOut {
   animation: moveImgToLeft  2s 1 ease-in-out;
 }
-.animTextIn {
-  animation: moveTextToRight  2s 1 ease-in-out;
-}
 .animImgIn {
   animation: moveImgToRight  2s 1 ease-in-out;
-}
+}*/
 
 /*---Foter---*/
 footer {
