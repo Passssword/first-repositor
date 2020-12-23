@@ -11,11 +11,14 @@ let massiveBoxes = document.querySelectorAll ('.anim_box');   // Получае�
 
 
 buttonMagic.onclick = function animBox() {
-	if (clickCounter < massiveBoxes.length-1) {
+	if (clickCounter < massiveBoxes.length) {
 		moveBox(addEventAnimationend);
+		buttonMagic.disabled = true;
 	}
 	else {
 		clickCounter = 0;
+		moveBox(addEventAnimationend);
+		buttonMagic.disabled = true;
 	}
 
 
@@ -36,8 +39,15 @@ function addEventAnimationend () {
 }
 function removeEventAnimationend() {
 	massiveBoxes[clickCounter].removeEventListener('animationend', removeAnimation)
+<<<<<<< HEAD
 	console.log(clickCounter);
 	clickCounter++;
+=======
+	console.log("let clickCounter = "+clickCounter);
+	console.log(massiveBoxes.length);
+	clickCounter++;
+	buttonMagic.disabled = false;
+>>>>>>> 241b5131e1b012f62485c65b5842080846c3f5f8
 }
 
 function moveBox(param_addEventAnimationend) {
