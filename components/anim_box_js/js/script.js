@@ -4,14 +4,15 @@ let clickCounter = 0;
 
 // Получаем кнопку, блоки
 
-let buttonMagic = document.querySelector('.anim_box_button');
-buttonMagic.onclick = animBox;
+let buttonMagic = document.querySelector('.anim_box_button'); // Получаем кнопку
 let massiveBoxes = document.querySelectorAll ('.anim_box');   // Получаем массив блоков
 
+// buttonMagic.onclick = animBox;
 
-function animBox() {
+
+buttonMagic.onclick = function animBox() {
 	if (clickCounter < massiveBoxes.length-1) {
-		moveBox();
+		moveBox(addEventAnimationend);
 	}
 	else {
 		clickCounter = 0;
@@ -24,16 +25,22 @@ function animBox() {
 // 	}
 // }
 
-function plusCounter() {
+function removeAnimation () {
+	massiveBoxes[clickCounter].classList.remove("animBlock");
+	console.log(massiveBoxes[clickCounter].classList);
+	buttonMagic.innerHTML = "Active Box: " + clickCounter;
+	removeEventAnimationend();
+}
+function addEventAnimationend () {
+	massiveBoxes[clickCounter].addEventListener('animationend', removeAnimation);
+}
+function removeEventAnimationend() {
+	massiveBoxes[clickCounter].removeEventListener('animationend', removeAnimation)
+	console.log(clickCounter);
 	clickCounter++;
 }
-function moveBox() {
+
+function moveBox(param_addEventAnimationend) {
 	massiveBoxes[clickCounter].classList.add('animBlock');
-	massiveBoxes[clickCounter].addEventListener('animationend', () => {
-		massiveBoxes[clickCounter].classList.remove("animBlock");
-		console.log(massiveBoxes[clickCounter].classList);
-		buttonMagic.innerHTML = "Active Box: " + clickCounter;
-	});
-	// clickCounter++;
-	console.log(clickCounter);
+	param_addEventAnimationend();
 }
