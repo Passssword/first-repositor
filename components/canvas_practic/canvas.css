@@ -1,0 +1,6 @@
+#canvas_desk {
+	width: 400px;
+	height: 200px;
+	border: 2px solid var(--clr3);
+	margin: 20px;
+}
